@@ -1,5 +1,19 @@
 /* questions should be bolded */
 /* answer choices should be bubbled in purple */
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headings {
+
+}
+
+.Highscores {
+
+}
+
+.Timer {
     
 }
