@@ -6,14 +6,24 @@
     box-sizing: border-box;
 }
 
-.headings {
+h1 {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 10px solid black;
+}
 
+.headings {
+    justify-content: center;
 }
 
 .Highscores {
-
+    padding: 10px 10px 10px 10px;
 }
 
 .Timer {
-    
+    text-align: end;
+    padding: 10px 10px 10px 10px;
 }

@@ -8,5 +8,7 @@
 // var question1 = {
     question: "bsdssfdjgznkj"
     answer: "awshbsldg"
+    wrong1: "awd"
+    
 // }
 // then have a function that calls for question1.question and an if statement that says is event.target = question1.answer then print "correct!" etc
