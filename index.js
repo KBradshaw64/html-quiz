@@ -29,4 +29,4 @@ function Countdown() {
     })
 }
 
-buttonID.addEventListener("click", Countdown())
+buttonID.addEventListener("click", Countdown)
