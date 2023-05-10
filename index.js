@@ -12,3 +12,21 @@
     
 // }
 // then have a function that calls for question1.question and an if statement that says is event.target = question1.answer then print "correct!" etc
+
+var timerEl = document.getElementById('time-remaining');
+var buttonID = document.getElementById('start-button');
+console.log(timerEl)
+
+function Countdown() {
+    var timeleft = 6000;
+    var timeInterval = setInterval(function () {
+        timeleft--;
+        timerEl.textContent = "Time remaining: " + timeleft
+        if(timeleft === 0) {
+            clearInterval(timeInterval);
+            timerEl.textContent = "NO TIME LEFT"
+        }
+    })
+}
+
+buttonID.addEventListener("click", Countdown())

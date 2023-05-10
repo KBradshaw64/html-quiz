@@ -7,7 +7,6 @@
 }
 
 h1 {
-    align-items: center;
     text-align: center;
     justify-content: center;
     width: 100%;
@@ -16,14 +15,24 @@ h1 {
 }
 
 .headings {
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .Highscores {
+    text-align: start;
+    align-items: flex-start;
     padding: 10px 10px 10px 10px;
+    font-size: 20px;
 }
 
 .Timer {
     text-align: end;
+    display: flex;
     padding: 10px 10px 10px 10px;
+}
+
+#time-remaining {
+    font: bold;
+    font-size: 20px;
+    color: black;
 }
