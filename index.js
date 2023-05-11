@@ -15,18 +15,44 @@
 
 var timerEl = document.getElementById('time-remaining');
 var buttonID = document.getElementById('start-button');
+
+var timer;
+var timerCount;
+var isWin = false;
+var winCounter = 0;
+var loseCounter = 0;
+
 console.log(timerEl)
 
 function Countdown() {
-    var timeleft = 6000;
-    var timeInterval = setInterval(function () {
-        timeleft--;
-        timerEl.textContent = "Time remaining: " + timeleft
-        if(timeleft === 0) {
-            clearInterval(timeInterval);
-            timerEl.textContent = "NO TIME LEFT"
+    timer = setInterval(function() {
+        timerCount--;
+        timerEl.textContent = "TIME REMAINING: " + timerCount;
+        if (timerCount >= 0) {
+            if(isWin && timerCount > 0) {
+                clearInterval(timer);
+                winGame();
+            }
         }
-    })
+        if (timerCount === 0) {
+            clearInterval(timer);
+            loseGame();
+        }
+    }, 1000);
 }
 
-buttonID.addEventListener("click", Countdown)
+function winGame() {
+
+}
+
+function loseGame() {
+
+}
+
+function StartGame() {
+    buttonID.disabled = true;
+    timerCount = 60;
+    Countdown()
+}
+
+buttonID.addEventListener("click", StartGame);
