@@ -18,9 +18,9 @@ var buttonID = document.getElementById('start-button');
 
 var timer;
 var timerCount;
-var isWin = false;
-var winCounter = 0;
-var loseCounter = 0;
+var isCorrect = false;
+var correctCounter = 0;
+var incorrectCounter = 0;
 
 console.log(timerEl)
 
@@ -29,23 +29,22 @@ function Countdown() {
         timerCount--;
         timerEl.textContent = "TIME REMAINING: " + timerCount;
         if (timerCount >= 0) {
-            if(isWin && timerCount > 0) {
-                clearInterval(timer);
-                winGame();
+            if(isCorrect && timerCount > 0) {
+                answerCorrect();
             }
         }
         if (timerCount === 0) {
             clearInterval(timer);
-            loseGame();
+            answerIncorrect();
         }
     }, 1000);
 }
 
-function winGame() {
+function answerCorrect() {
 
 }
 
-function loseGame() {
+function answerIncorrect() {
 
 }
 
