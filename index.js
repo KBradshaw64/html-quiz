@@ -12,9 +12,44 @@
     
 // }
 // then have a function that calls for question1.question and an if statement that says is event.target = question1.answer then print "correct!" etc
+var question1 = {
+    question: "A 'function' is coded in what language?",
+    answer: "JavaScript",
+    wrong1: "HTML",
+    wrong2: "CSS",
+    wrong3: "I don't know"
+};
+
+var question2 = {
+    question: "What language is primarily used for styling a webpage?",
+    answer: "CSS",
+    wrong1: "HTML",
+    wrong2: "JavaScript",
+    wrong3: "Python"
+};
+
+var question3 = {
+    question: "What does '<br>' do in HTML?",
+    answer: "Puts a break in the page",
+    wrong1: "Breaks the code",
+    wrong2: "brushing his teeth",
+    wrong3: "nothing"
+};
+
+var question4 = {
+    question: "What is a 'boolean'?",
+    answer: "A datatype",
+    wrong1: "A string",
+    wrong2: "An old western boot type",
+    wrong3: "A question?"
+};
+
+console.log(question1.answer)
 
 var timerEl = document.getElementById('time-remaining');
 var buttonID = document.getElementById('start-button');
+var highscoreBTN = document.getElementById('Highscores');
+var highscoreShow = document.getElementById('highscoreShow');
 
 var timer;
 var timerCount;
@@ -23,6 +58,8 @@ var correctCounter = 0;
 var incorrectCounter = 0;
 
 console.log(timerEl)
+
+highscoreBTN.textContent = "View Highscores"
 
 function Countdown() {
     timer = setInterval(function() {
@@ -41,12 +78,11 @@ function Countdown() {
 }
 
 function answerCorrect() {
-
+    
 }
+//needs to add a point to local storage "correct"
 
-function answerIncorrect() {
-
-}
+//function answerIncorrect() {}
 
 function StartGame() {
     buttonID.disabled = true;
@@ -54,4 +90,12 @@ function StartGame() {
     Countdown()
 }
 
+function ShowHighscore() {
+    if (highscoreShow.style.display === "none") {
+        highscoreShow.style.display === "block"
+    }
+
+}
+
 buttonID.addEventListener("click", StartGame);
+highscoreBTN.addEventListener("click", ShowHighscore);
