@@ -22,7 +22,7 @@ h1 {
     text-align: start;
     align-items: flex-start;
     padding: 10px 10px 10px 10px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .Timer {
@@ -54,3 +54,10 @@ section {
     height: 500px;
 }
 
+#questions {
+    
+}
+
+#highscore-hide {
+    display: none;
+}

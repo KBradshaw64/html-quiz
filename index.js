@@ -44,12 +44,27 @@ var question4 = {
     wrong3: "A question?"
 };
 
+ArrayQ = [question1.question, question2.question, question3.question, question4.question]
+
+function printQuestion () {
+    
+}
+
+
 console.log(question1.answer)
 
 var timerEl = document.getElementById('time-remaining');
 var buttonID = document.getElementById('start-button');
 var highscoreBTN = document.getElementById('Highscores');
-var highscoreShow = document.getElementById('highscoreShow');
+var highscoreHidden = document.getElementById('highscore-hide');
+var questionSect = document.getElementById('questions');
+var choiceLi = document.getElementById('choice-list');
+var goBackBtn = document.getElementById('go-back');
+
+var li1 = document.createElement("li");
+var li2 = document.createElement("li");
+var li3 = document.createElement("li");
+var li4 = document.createElement("li");
 
 var timer;
 var timerCount;
@@ -77,9 +92,7 @@ function Countdown() {
     }, 1000);
 }
 
-function answerCorrect() {
-    
-}
+//function answerCorrect() {}
 //needs to add a point to local storage "correct"
 
 //function answerIncorrect() {}
@@ -90,12 +103,14 @@ function StartGame() {
     Countdown()
 }
 
-function ShowHighscore() {
-    if (highscoreShow.style.display === "none") {
-        highscoreShow.style.display === "block"
-    }
 
-}
 
 buttonID.addEventListener("click", StartGame);
-highscoreBTN.addEventListener("click", ShowHighscore);
+highscoreBTN.addEventListener("click", function() {
+    questionSect.style.display = "none"
+    highscoreHidden.style.display = "block"
+});
+goBackBtn.addEventListener("click", function() {
+    questionSect.style.display = "block"
+    highscoreHidden.style.display = "none"
+})
