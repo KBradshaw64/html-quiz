@@ -77,7 +77,8 @@ function printQuestion () {
         var itemBad3 = ArrayQ[index].wrong3
         ArrayQ.splice(index,1);
         questionSect.textContent = item;
-        //these are not selecting the correct parameters
+        //these need to be able to be randomized
+        //need to add clickable buttons to the answer choices somehow
         li1.textContent = itemGood;
         li2.textContent = itemBad;
         li3.textContent = itemBad2;
@@ -114,6 +115,7 @@ function Countdown() {
 //needs to add a point to local storage "correct"
 
 //function answerIncorrect() {}
+//just moves to next question without adding a point
 
 function StartGame() {
     buttonID.disabled = true;
@@ -125,10 +127,13 @@ function StartGame() {
 
 
 buttonID.addEventListener("click", StartGame);
+
 highscoreBTN.addEventListener("click", function() {
     questionAll.style.display = "none"
     highscoreHidden.style.display = "block"
+    //need to grab local data stored and show in a list
 });
+
 goBackBtn.addEventListener("click", function() {
     questionAll.style.display = "block"
     highscoreHidden.style.display = "none"
