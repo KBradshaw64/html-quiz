@@ -55,7 +55,11 @@ section {
 }
 
 #questions {
-    
+    padding: 10px 10px 10px 10px;
+}
+
+#choice-list {
+    padding: 10px 10px 10px 10px;
 }
 
 #highscore-hide {

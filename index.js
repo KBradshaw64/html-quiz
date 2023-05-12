@@ -44,20 +44,12 @@ var question4 = {
     wrong3: "A question?"
 };
 
-ArrayQ = [question1.question, question2.question, question3.question, question4.question]
-
-function printQuestion () {
-    
-}
-
-
-console.log(question1.answer)
-
 var timerEl = document.getElementById('time-remaining');
 var buttonID = document.getElementById('start-button');
 var highscoreBTN = document.getElementById('Highscores');
 var highscoreHidden = document.getElementById('highscore-hide');
-var questionSect = document.getElementById('questions');
+var questionSect = document.getElementById('quest-span');
+var questionAll = document.getElementById('questions')
 var choiceLi = document.getElementById('choice-list');
 var goBackBtn = document.getElementById('go-back');
 
@@ -74,6 +66,32 @@ var incorrectCounter = 0;
 
 console.log(timerEl)
 
+ArrayQ = [question1, question2, question3, question4]
+
+function printQuestion () {
+        var index = Math.floor(Math.random()*ArrayQ.length);
+        var item = ArrayQ[index].question;
+        var itemGood = ArrayQ[index].answer
+        var itemBad = ArrayQ[index].wrong1
+        var itemBad2 = ArrayQ[index].wrong2
+        var itemBad3 = ArrayQ[index].wrong3
+        ArrayQ.splice(index,1);
+        questionSect.textContent = item;
+        //these are not selecting the correct parameters
+        li1.textContent = itemGood;
+        li2.textContent = itemBad;
+        li3.textContent = itemBad2;
+        li4.textContent = itemBad3;
+        choiceLi.appendChild(li1);
+        choiceLi.appendChild(li2);
+        choiceLi.appendChild(li3);
+        choiceLi.appendChild(li4);
+        console.log(item)
+        console.log(li1)
+    };
+
+console.log(question1.answer)
+
 highscoreBTN.textContent = "View Highscores"
 
 function Countdown() {
@@ -82,12 +100,12 @@ function Countdown() {
         timerEl.textContent = "TIME REMAINING: " + timerCount;
         if (timerCount >= 0) {
             if(isCorrect && timerCount > 0) {
-                answerCorrect();
+                //answerCorrect();
             }
         }
         if (timerCount === 0) {
             clearInterval(timer);
-            answerIncorrect();
+            //answerIncorrect();
         }
     }, 1000);
 }
@@ -101,16 +119,17 @@ function StartGame() {
     buttonID.disabled = true;
     timerCount = 60;
     Countdown()
+    printQuestion()
 }
 
 
 
 buttonID.addEventListener("click", StartGame);
 highscoreBTN.addEventListener("click", function() {
-    questionSect.style.display = "none"
+    questionAll.style.display = "none"
     highscoreHidden.style.display = "block"
 });
 goBackBtn.addEventListener("click", function() {
-    questionSect.style.display = "block"
+    questionAll.style.display = "block"
     highscoreHidden.style.display = "none"
 })
